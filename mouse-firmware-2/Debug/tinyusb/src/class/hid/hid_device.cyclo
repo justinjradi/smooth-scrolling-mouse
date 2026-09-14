@@ -1,0 +1,15 @@
+../tinyusb/src/class/hid/hid_device.c:64:23:get_index_by_itfnum	3
+../tinyusb/src/class/hid/hid_device.c:77:6:tud_hid_n_ready	6
+../tinyusb/src/class/hid/hid_device.c:84:6:tud_hid_n_report	7
+../tinyusb/src/class/hid/hid_device.c:104:9:tud_hid_n_interface_protocol	1
+../tinyusb/src/class/hid/hid_device.c:106:9:tud_hid_n_get_protocol	1
+../tinyusb/src/class/hid/hid_device.c:108:6:tud_hid_n_keyboard_report	2
+../tinyusb/src/class/hid/hid_device.c:124:6:tud_hid_n_mouse_report	1
+../tinyusb/src/class/hid/hid_device.c:137:6:tud_hid_n_abs_mouse_report	1
+../tinyusb/src/class/hid/hid_device.c:149:6:tud_hid_n_gamepad_report	1
+../tinyusb/src/class/hid/hid_device.c:168:6:hidd_init	1
+../tinyusb/src/class/hid/hid_device.c:173:6:hidd_deinit	1
+../tinyusb/src/class/hid/hid_device.c:178:6:hidd_reset	1
+../tinyusb/src/class/hid/hid_device.c:184:10:hidd_open	16
+../tinyusb/src/class/hid/hid_device.c:237:6:hidd_control_xfer_cb	38
+../tinyusb/src/class/hid/hid_device.c:372:6:hidd_xfer_cb	16

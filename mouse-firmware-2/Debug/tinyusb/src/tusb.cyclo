@@ -1,0 +1,17 @@
+../tinyusb/src/tusb.c:46:6:tusb_init	1
+../tinyusb/src/tusb.c:60:6:tusb_inited	3
+../tinyusb/src/tusb.c:78:16:tu_desc_find	3
+../tinyusb/src/tusb.c:86:16:tu_desc_find2	4
+../tinyusb/src/tusb.c:94:16:tu_desc_find3	5
+../tinyusb/src/tusb.c:106:6:tu_edpt_claim	6
+../tinyusb/src/tusb.c:123:6:tu_edpt_release	4
+../tinyusb/src/tusb.c:137:6:tu_edpt_validate	16
+../tinyusb/src/tusb.c:171:6:tu_edpt_bind_driver	3
+../tinyusb/src/tusb.c:186:10:tu_desc_get_interface_total_len	6
+../tinyusb/src/tusb.c:217:6:tu_edpt_stream_init	1
+../tinyusb/src/tusb.c:233:6:tu_edpt_stream_deinit	1
+../tinyusb/src/tusb.c:287:6:tu_edpt_stream_write_zlp_if_needed	10
+../tinyusb/src/tusb.c:295:10:tu_edpt_stream_write_xfer	10
+../tinyusb/src/tusb.c:316:10:tu_edpt_stream_write	4
+../tinyusb/src/tusb.c:332:10:tu_edpt_stream_read_xfer	10
+../tinyusb/src/tusb.c:361:10:tu_edpt_stream_read	1

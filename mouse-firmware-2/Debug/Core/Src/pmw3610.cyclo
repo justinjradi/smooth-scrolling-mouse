@@ -1,0 +1,5 @@
+../Core/Src/pmw3610.c:20:19:read_reg	6
+../Core/Src/pmw3610.c:50:19:write_reg_helper	5
+../Core/Src/pmw3610.c:76:19:write_reg	4
+../Core/Src/pmw3610.c:107:19:pmw3610_init	5
+../Core/Src/pmw3610.c:167:19:pmw3610_get_values	5
