@@ -1,10 +1,10 @@
 ## Smooth Scrolling Mouse
 
-![](images\main-image.jpg)
+<img src="images\main-image.jpg" style="zoom:100%;" />
 
 #### Overview
 
-In this project, I built a a new type of USB computer mouse capable of scrolling and panning smoothly in any direction. In the mouse, the scroll wheel is replaced with a finger-operated joystick, which is held static during usage instead of being constantly rolled to navigate large documents and workspaces.
+In this project, I built a a new type of USB computer mouse capable of scrolling and panning smoothly in any direction. The scroll wheel is replaced with a finger-operated joystick, which is held static during usage instead of being constantly when navigating large documents and workspaces.
 
 Firmware was developed for a STM32 development board, involving writing custom USB device applications, a driver for a PMW3610 optical sensor, and reverse-engineering the requirements of Windows hosts using protocol knowledge and Wireshark. Furthermore, a chassis with clicking mechanism was designed using Autodesk Fusion and fabricated using an FDM 3D printer.
 
@@ -16,7 +16,7 @@ The MCU development board was soldered onto perfboard along with Kailh silent mo
 
 The joystick chosen was a replacement for the Nintendo switch joystick and which was chosen because of its small size, low force required to displace, and built-in button. Additionally, an FPC connector breakout board was used to interface with it.
 
-![](images\inside.jpg)
+<img src="images\inside.jpg" style="zoom:100%;" />
 
 #### Firmware Development
 
