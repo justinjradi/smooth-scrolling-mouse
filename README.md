@@ -1,14 +1,14 @@
-## Smooth Scrolling Mouse
+# Smooth Scrolling Mouse
 
 <img src="images\main-image.jpg" style="zoom:100%;" />
 
-#### Overview
+### Overview
 
 In this project, I built a a new type of USB computer mouse capable of scrolling and panning smoothly in any direction. The scroll wheel is replaced with a finger-operated joystick, which is held static during usage instead of being constantly when navigating large documents and workspaces.
 
 Firmware was developed for a STM32 development board, involving writing custom USB device applications, a driver for a PMW3610 optical sensor, and reverse-engineering the requirements of Windows hosts using protocol knowledge and Wireshark. Furthermore, a chassis with clicking mechanism was designed using Autodesk Fusion and fabricated using an FDM 3D printer.
 
-#### System Design
+### System Design
 
 The system was designed using a [WeAct STM32F411CEU6 development board](https://stm32-base.org/boards/STM32F411CEU6-WeAct-Black-Pill-V2.0.html), chosen for its small size, user USB connector, and USB FS peripheral supported by TinyUSB. A simple breakout board-based system architecture was used given that this was a quick prototype without large SI constraints.
 
@@ -18,11 +18,11 @@ The joystick chosen was a replacement for the Nintendo switch joystick and which
 
 <img src="images\inside.jpg" style="zoom:100%;" />
 
-#### Firmware Development
+### Firmware Development
 
 <img src="images\app-pinout.png" style="zoom:60%;" />
 
-##### Main Program
+#### Main Program
 
 The main loop is structured as a single non-blocking cycle with one deliberate blocking point: a fixed 10-ms minimum loop time enforced right before the report is sent, which keeps the report rate steady regardless of how long sensor polling and other input handling take. At the top of every iteration, a timestamp is taken and the report's `x` and `y` fields are cleared, since these are relative values that should default to zero unless new motion is detected that iteration (unlike the buttons, which reflect a continuous state).
 
@@ -63,7 +63,7 @@ The joystick's two axes go through ADC1, configured for two channels in disconti
 
 With respect to clock configuration, SYSCLK is set to 16 MHz and PLL M/N/Q dividers were chosen to provide exactly 48 MHz to the USB OTG peripheral.
 
-##### PMW3610 Driver
+#### PMW3610 Driver
 
 A driver for the PMW3610 optical sensor is implemented in `inc/pmw3610.h`. The PMW3610 communicates over a 3-wire SPI-like interface, so SPI2 is configured half-duplex, `SPI_DIRECTION_1LINE`, meaning MOSI and MISO share a single physical line and the peripheral is manually switched between transmit and receive around each register access. It's set to Mode 0 (`CLKPolarity = LOW`, `CLKPhase = 1EDGE`) and a baud rate of 31.25 kbit. For simplicity, chip-select is implemented with GPIO calls.
 
@@ -86,7 +86,7 @@ Writes follow a similar process, sending the address with the MSB set to 1 follo
 
 `pmw3610_get_values()` does a single 4-byte burst read starting at the burst register, which returns the motion status byte plus the low bytes of X and Y and a shared high-nibble byte. If the motion bit isn't set, there's no new data and the function returns early with `valid = PMW3610_MOT_REG_INVAL`. Otherwise, the delta values need to be reconstructed: X and Y are each 12-bit signed integers, but the sensor packs their high 4 bits together into a single byte (upper nibble for X, lower nibble for Y) alongside their separate low bytes. The driver shifts each nibble into position, ORs it together with the corresponding low byte to get a 12-bit value, then manually sign-extends from bit 11 up through bit 15 before casting to `int16_t`.
 
-##### USB Device Application
+#### USB Device Application
 
 While other software methods as well as other firmware methods were evaluated (such as by emulating a Windows Precision touchpad; [repository link here](https://github.com/justinjradi/stm32-usb-touchpad)), I decided to use the [specification for smooth scrolling mice on Windows](https://download.microsoft.com/download/b/d/1/bd1f7ef4-7d72-419e-bc5c-9f79ad7bb66e/wheel.docx) in my latest prototype.
 
@@ -248,7 +248,7 @@ case HID_REQ_CONTROL_GET_REPORT:
   break;
 ```
 
-#### Chassis Design
+### Chassis Design
 
 A chassis was designed in Autodesk Fusion, including a base plate and bracket to hold the joystick (seen in pictures in System Design section), and a shell. A cross section of the mechanism for pressing the mainboard buttons, which was part of the shell, is shown below. Models for the mainboard and optical sensor breakout board were also created to aid with space planning. The CAD file, `mouse-body-v115.f3z` is available for download.
 
