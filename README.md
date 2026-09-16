@@ -88,7 +88,7 @@ Writes follow a similar process, sending the address with the MSB set to 1 follo
 
 #### USB Device Application
 
-While other software methods as well as other firmware methods were evaluated (such as by emulating a Windows Precision touchpad; [repository link here](https://github.com/justinjradi/stm32-usb-touchpad)), I decided to use the [specification for smooth scrolling mice on Windows](https://download.microsoft.com/download/b/d/1/bd1f7ef4-7d72-419e-bc5c-9f79ad7bb66e/wheel.docx) in my latest prototype.
+While other software methods as well as other firmware methods were evaluated (such as by emulating a Windows Precision touchpad; [repository link here](https://github.com/justinjradi/stm32-usb-touchpad)), I decided to use the [specification for smooth scrolling mice on Windows (note: link is an immediate download, .docx, 44 KiB)](https://download.microsoft.com/download/b/d/1/bd1f7ef4-7d72-419e-bc5c-9f79ad7bb66e/wheel.docx) in my latest prototype.
 
 TinyUSB (version 0.17.0), was used to implement the HID-class USB device and is configured in `inc/tusb_config.h` for USB FS. The HID report descriptors that are used to implement the host's requirements for a HID smooth scrolling mouse follow. They are contained in `src/usb_descriptors.c`:
 
