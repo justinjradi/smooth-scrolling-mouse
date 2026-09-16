@@ -14,7 +14,7 @@ The system was designed using a [WeAct STM32F411CEU6 development board](https://
 
 The MCU development board was soldered onto perfboard along with Kailh silent mouse switches, pull-down resistors, and pin headers to form a mainboard. A PMW3610-DM optical mouse sensor breakout board was used for cursor tracking. Lastly, scrolling was implemented using a joystick.
 
-The joystick chosen was a replacement for the Nintendo switch joystick and which was chosen because of its small size, low force required to displace, and built-in button. Additionally, an FPC connector breakout board was used to interface with it.
+A replacement joystick for the Nintendo switch and which was chosen to control scrolling/panning because of its small size, low force required to displace, and built-in button. Additionally, an FPC connector breakout board was used to interface with it.
 
 <img src="images\inside.jpg" style="zoom:100%;" />
 
@@ -172,7 +172,7 @@ uint8_t const desc_hid_report[] =
 };
 ```
 
-The descriptor nests two logical collections inside the mouse's physical collection: one for scrolling and one for panning with having its own resolution multiplier feature item under `REPORTID_RES_MULTIPLIER`. The implementation of a library for the device application is contained in `inc/evcm.h` and it defines the following structs for reports:
+The descriptor nests two logical collections inside the mouse's physical collection: one for scrolling and one for panning. The implementation of a library for the device application is contained in `inc/evcm.h` and it defines the following structs for reports:
 
 ```c
 // Mouse Input Report
