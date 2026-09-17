@@ -253,3 +253,13 @@ case HID_REQ_CONTROL_GET_REPORT:
 A chassis was designed in Autodesk Fusion, including a base plate and bracket to hold the joystick (seen in pictures in System Design section), and a shell. A cross section of the mechanism for pressing the mainboard buttons, which was part of the shell, is shown below. Models for the mainboard and optical sensor breakout board were also created to aid with space planning. The CAD file, `mouse-body-v115.f3z` is available for download.
 
 <img src="images\clicking-mechanism.png" style="zoom:60%;" />
+
+### Next Steps
+
+While I consider this current prototype to be complete, I'm still exploring hardware and software approaches to improving the amount of control that the mouse gives over viewport navigation. For example, one thing that I've spent some time working on is custom joystick and scroll ball designs to improve the range of motion. Some things that were involved in these explorations included :
+
+- Performing calculations to calculate the amount of torque required to displace a joystick compensated by tension springs, given their dimensions and spring constants.
+- Taking advantage of my access to student FEA software and using Ansys Mechanical to determine the force required to displace a compliant rod. In addition to using parameters from datasheets, this involved creating a model for the elastomer based on technical literature.
+- Similarly, I also used Ansys Maxwell to perform a parametric magnetostatic simulation to find the minimum magnetic flux density seen by a Hall Effect Sensor given the possible positions of a magnet. This helped me to verify whether a particular design was feasible given the sensing range of the Hall Effect sensor and its distance from the magnet. A graph produced in this analysis is pictured below.
+
+<img src="images\magnetic-sim.png" style="zoom:60%;" />
