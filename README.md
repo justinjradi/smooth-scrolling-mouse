@@ -262,4 +262,4 @@ While I consider this current prototype to be complete, I'm still exploring hard
 - Taking advantage of my access to student FEA software and using Ansys Mechanical to determine the force required to displace a compliant rod. In addition to using parameters from datasheets, this involved creating a model for the elastomer based on technical literature.
 - Similarly, I also used Ansys Maxwell to perform a parametric magnetostatic simulation to find the minimum magnetic flux density seen by a Hall Effect Sensor given the possible positions of a magnet. This helped me to verify whether a particular design was feasible given the sensing range of the Hall Effect sensor and its distance from the magnet. A graph produced in this analysis is pictured below.
 
-<img src="images\magnetic-sim.png" style="zoom:60%;" />
+<img src="images\magnetostatic-sim.png" style="zoom:60%;" />
